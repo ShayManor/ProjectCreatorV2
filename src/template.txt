@@ -1,0 +1,54 @@
+// src/games/exampleGame.js
+import BaseGame from '../baseGame.js';
+
+export default class ExampleGame extends BaseGame {
+  constructor(container) {
+    super(container);
+    // Initialize game-specific properties here
+  }
+
+  init() {
+    // Initialize the game (setup variables, game state, etc.)
+    // TODO: Implement game initialization logic here
+  }
+
+  render() {
+    // Render the game UI
+    this.container.innerHTML = `
+      <h2>Example Game</h2>
+      <div id="game-area">
+        <!-- Game content goes here -->
+      </div>
+      <button id="reset-button">Reset</button>
+    `;
+    // TODO: Implement rendering logic here
+    this.addEventListeners();
+  }
+
+  addEventListeners() {
+    // Add event listeners for user interaction
+    this.container.querySelector('#reset-button').addEventListener('click', () => {
+      this.reset();
+    });
+
+    // TODO: Add more event listeners as needed
+  }
+
+  handleInput(input) {
+    // Handle user input
+    // TODO: Implement input handling logic here
+  }
+
+  update() {
+    // Update the game state
+    // TODO: Implement game update logic here
+  }
+
+  reset() {
+    // Reset the game to its initial state
+    this.init();
+    this.render();
+  }
+
+  //TODO: Implement other methods here
+}
